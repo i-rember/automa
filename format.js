@@ -54,6 +54,8 @@ function format_condition(cond, cells) {
             let res = "";
             res += cond["not"] ? "does not have " : "has ";
             res += format_comparison(cond["comparison"]) + " ";
+            const neighborhoodLabels = ["???", "cardinal", "diagonal", "adjacent"];
+            res += neighborhoodLabels[cond["neighborhood"]];
 
             if (Array.isArray(cond["cells"])) {
                 for (let i = 0; i < cond["cells"].length; i++) {
@@ -66,8 +68,6 @@ function format_condition(cond, cells) {
                 res += "unknown ";
             }
 
-            const neighborhoodLabels = ["???", "cardinal", "diagonal", "adjacent"];
-            res += (neighborhoodLabels[cond["neighborhood"]] || "neighbors");
             res += " neighbors";
             return res;
         }
