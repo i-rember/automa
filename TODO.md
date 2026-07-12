@@ -1,0 +1,4 @@
+- [ ] Drawing on the canvas
+- [ ] Editable cells
+- [ ] Editable rules
+- [ ] More presets
