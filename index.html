@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Automa</title>
+</head>
+
+<body>
+    <div style="display: flex; gap: 5rem;">
+        <div>
+            <canvas id="cellsCanvas" width="500px" height="500px"
+                style="display:block; image-rendering: pixelated; border: 2px solid black;"></canvas>
+            <br>
+            <button onclick="play();">Play</button>
+            <button onclick="pause();">Pause</button>
+            <button onclick="tick();">Step</button>
+            <br>
+            <label for="speedRange">Ticks/sec:</label>
+            <input id="speedRange" type="range" min="1" max="60" value="30">
+            <span id="speedValue">30</span>
+            <br>
+            Reset:
+            <button onclick="reset();">Clear</button>
+            <button onclick="reset();fill_with_noise(0.25);">Low noise</button>
+            <button onclick="reset();fill_with_noise(0.5);">Mid noise</button>
+            <button onclick="reset();fill_with_noise(0.75);">High noise</button>
+        </div>
+        <div>
+            Preset:
+            <select id="presetSelect" onchange="applySelectedPreset()"></select>
+            <br><br>
+            Cells (topmost is "empty")
+            <ul id="cells"></ul>
+            Rules (higher run first)
+            <ul id="rules"></ul>
+        </div>
+    </div>
+</body>
+<script src="interpret.js"></script>
+<script src="presets.js"></script>
+<script src="format.js"></script>
+<script src="main.js"></script>
+</html>
