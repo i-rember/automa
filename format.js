@@ -56,6 +56,7 @@ function format_condition(cond, cells) {
             res += format_comparison(cond["comparison"]) + " ";
             const neighborhoodLabels = ["???", "cardinal", "diagonal", "adjacent"];
             res += neighborhoodLabels[cond["neighborhood"]];
+            res += " "
 
             if (Array.isArray(cond["cells"])) {
                 for (let i = 0; i < cond["cells"].length; i++) {
